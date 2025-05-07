@@ -18,8 +18,8 @@ export default function Sidebar({ visible = true }: SidebarProps) {
   const linkClass = (path: string) => 
     `flex items-center px-4 py-3 mb-2 rounded-lg transition-colors ${
       location === path 
-        ? "bg-secondary-dark text-white" 
-        : "hover:bg-secondary-dark text-white hover:text-white"
+        ? "bg-primary text-white" 
+        : "hover:bg-primary/20 text-white hover:text-white"
     }`;
 
   if (!visible) return null;
@@ -27,12 +27,13 @@ export default function Sidebar({ visible = true }: SidebarProps) {
   return (
     <aside className="hidden md:flex flex-col w-64 bg-secondary text-white fixed inset-y-0 left-0">
       <div className="px-6 py-4">
-        <h1 className="font-heading font-bold text-xl flex items-center">
-          <span className="bg-primary rounded-full w-8 h-8 flex items-center justify-center mr-2">
-            <i className="ri-fire-fill"></i>
-          </span>
-          Studio Gatas Saradas
-        </h1>
+        <div className="mb-2">
+          <img 
+            src="/src/assets/studio-gatas-saradas-logo.png"
+            alt="Studio Gatas Saradas"
+            className="h-12"
+          />
+        </div>
       </div>
       
       {isTrainer ? (

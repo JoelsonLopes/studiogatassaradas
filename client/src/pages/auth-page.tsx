@@ -22,12 +22,13 @@ export default function AuthPage() {
         <div className="w-full max-w-md">
           <div className="mb-8 text-center">
             <div className="flex justify-center">
-              <span className="bg-primary rounded-full w-12 h-12 flex items-center justify-center mb-3">
-                <i className="ri-fire-fill text-white text-xl"></i>
-              </span>
+              <img 
+                src="/src/assets/studio-gatas-saradas-logo.png" 
+                alt="Studio Gatas Saradas" 
+                className="h-20 mb-3"
+              />
             </div>
-            <h1 className="text-3xl font-bold font-heading">Studio Gatas Saradas</h1>
-            <p className="text-neutral-medium mt-2">Plataforma de Treino Online</p>
+            <p className="text-neutral-medium mt-2">Plataforma de Treino Online by DANI LOPES</p>
           </div>
 
           <Tabs defaultValue="login" className="w-full">
@@ -46,7 +47,7 @@ export default function AuthPage() {
       </div>
 
       {/* Right Side - Hero */}
-      <div className="flex-1 bg-gradient-to-br from-primary to-secondary text-white p-10 hidden md:flex md:flex-col md:justify-center">
+      <div className="flex-1 bg-secondary text-white p-10 hidden md:flex md:flex-col md:justify-center">
         <div className="max-w-lg">
           <h2 className="text-4xl font-bold mb-6 font-heading">
             Transforme seu corpo e sua vida com treinos personalizados

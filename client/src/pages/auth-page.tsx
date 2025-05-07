@@ -4,6 +4,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import LoginForm from "@/components/auth/login-form";
 import RegisterForm from "@/components/auth/register-form";
+import logoImg from "../assets/studio-gatas-saradas-logo.png";
 
 export default function AuthPage() {
   const { user, isLoading } = useAuth();
@@ -23,7 +24,7 @@ export default function AuthPage() {
           <div className="mb-8 text-center">
             <div className="flex justify-center">
               <img 
-                src="/src/assets/studio-gatas-saradas-logo.png" 
+                src={logoImg} 
                 alt="Studio Gatas Saradas" 
                 className="h-20 mb-3"
               />

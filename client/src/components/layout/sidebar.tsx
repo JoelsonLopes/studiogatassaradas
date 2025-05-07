@@ -1,5 +1,6 @@
 import { useAuth } from "@/hooks/use-auth";
 import { useLocation, Link } from "wouter";
+import logoImg from "../../assets/studio-gatas-saradas-logo.png";
 
 interface SidebarProps {
   visible?: boolean;
@@ -29,7 +30,7 @@ export default function Sidebar({ visible = true }: SidebarProps) {
       <div className="px-6 py-4">
         <div className="mb-2">
           <img 
-            src="/src/assets/studio-gatas-saradas-logo.png"
+            src={logoImg}
             alt="Studio Gatas Saradas"
             className="h-12"
           />
@@ -75,11 +76,11 @@ export default function Sidebar({ visible = true }: SidebarProps) {
           <div className="text-neutral-light text-xs font-semibold uppercase tracking-wider px-4 mt-6 mb-2">
             Conteúdo
           </div>
-          <a href="#" className="flex items-center px-4 py-3 mb-2 hover:bg-secondary-dark rounded-lg transition-colors">
+          <a href="#" className="flex items-center px-4 py-3 mb-2 hover:bg-primary/20 rounded-lg transition-colors">
             <i className="ri-video-line mr-3 text-lg"></i>
             Vídeos
           </a>
-          <a href="#" className="flex items-center px-4 py-3 mb-2 hover:bg-secondary-dark rounded-lg transition-colors">
+          <a href="#" className="flex items-center px-4 py-3 mb-2 hover:bg-primary/20 rounded-lg transition-colors">
             <i className="ri-book-2-line mr-3 text-lg"></i>
             Biblioteca de Exercícios
           </a>
@@ -107,7 +108,7 @@ export default function Sidebar({ visible = true }: SidebarProps) {
               Meus Treinos
             </a>
           </Link>
-          <a href="#" className="flex items-center px-4 py-3 mb-2 hover:bg-secondary-dark rounded-lg transition-colors">
+          <a href="#" className="flex items-center px-4 py-3 mb-2 hover:bg-primary/20 rounded-lg transition-colors">
             <i className="ri-bar-chart-line mr-3 text-lg"></i>
             Progresso
           </a>

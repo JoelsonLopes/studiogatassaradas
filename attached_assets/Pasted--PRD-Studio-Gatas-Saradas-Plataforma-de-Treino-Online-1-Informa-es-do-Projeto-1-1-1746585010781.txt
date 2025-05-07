@@ -1,0 +1,58 @@
+# PRD: Studio Gatas Saradas - Plataforma de Treino Online
+
+## 1. Informações do Projeto
+
+### 1.1 Visão Geral
+Studio Gatas Saradas é uma plataforma web de treinamento personalizado desenvolvida para a personal trainer Daniela Lopes, oferecendo uma experiência moderna e profissional para gestão e acompanhamento de treinos online.
+
+### 1.2 Especificações Técnicas
+- Frontend: Next.js com TypeScript
+- Backend: Node.js com TypeScript
+- Banco de Dados: Supabase (PostgreSQL)
+- Arquitetura: Princípios SOLID e Clean Code
+
+## 2. Definição do Produto
+
+### 2.1 Objetivos do Produto
+1. Fornecer uma plataforma intuitiva e eficiente para gerenciamento de alunas e programas de treinamento
+2. Oferecer uma experiência personalizada de treino com recursos de vídeo e acompanhamento
+3. Facilitar o agendamento e organização de treinos entre personal trainer e alunas
+4. Gerenciar pagamentos e finanças da plataforma com segurança e eficiência
+
+### 2.2 User Stories
+
+#### Como Personal Trainer
+- Quero cadastrar novas alunas para gerenciar minha base de clientes
+- Quero criar e atribuir treinos personalizados com vídeos para cada aluna
+- Quero gerenciar agendamentos e visualizar minha agenda de treinos
+- Quero acompanhar o progresso das minhas alunas
+- **Quero acompanhar pagamentos recebidos e pendentes**
+- **Quero gerar relatórios financeiros com filtro por período**
+- **Quero visualizar o histórico de transações e status de cada pagamento**
+
+#### Como Aluna
+- Quero acessar meus treinos personalizados com vídeos demonstrativos
+- Quero agendar sessões de treino através do calendário
+- Quero visualizar meu progresso e histórico de treinos
+- Quero acessar a plataforma de qualquer dispositivo
+- **Quero assinar um plano e pagar via cartão de crédito**
+- **Quero ver minhas faturas pagas e pendentes**
+- **Quero ser notificada quando houver uma cobrança ou falha de pagamento**
+
+### 2.3 Análise Competitiva
+
+```mermaid
+quadrantChart
+    title "Análise Competitiva - Plataformas de Treino Online"
+    x-axis "Menor Personalização" --> "Maior Personalização"
+    y-axis "Menor Engajamento" --> "Maior Engajamento"
+    quadrant-1 "Líderes"
+    quadrant-2 "Diferenciadores"
+    quadrant-3 "Básicos"
+    quadrant-4 "Emergentes"
+    "Future Fitness": [0.8, 0.9]
+    "EvolveYou": [0.7, 0.75]
+    "WeGLOW": [0.6, 0.65]
+    "Bonecas de Ferro": [0.75, 0.85]
+    "Ladder": [0.55, 0.6]
+    "Studio Gatas Saradas": [0.78, 0.88]

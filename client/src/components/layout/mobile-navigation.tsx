@@ -14,73 +14,55 @@ export default function MobileNavigation() {
       location === path 
         ? "text-primary" 
         : "text-neutral-medium"
-    }`;
+    } cursor-pointer`;
 
   return (
     <nav className="md:hidden fixed bottom-0 inset-x-0 bg-white border-t border-neutral-light flex justify-around p-2 z-10">
       {isTrainer ? (
         <>
-          <Link href="/">
-            <a className={linkClass('/')}>
-              <i className="ri-dashboard-line text-xl"></i>
-              <span className="text-xs mt-1">Dashboard</span>
-            </a>
-          </Link>
-          <Link href="/students">
-            <a className={linkClass('/students')}>
-              <i className="ri-user-line text-xl"></i>
-              <span className="text-xs mt-1">Alunas</span>
-            </a>
-          </Link>
-          <Link href="/workouts">
-            <a className={linkClass('/workouts')}>
-              <i className="ri-heart-pulse-line text-xl"></i>
-              <span className="text-xs mt-1">Treinos</span>
-            </a>
-          </Link>
-          <Link href="/schedule">
-            <a className={linkClass('/schedule')}>
-              <i className="ri-calendar-line text-xl"></i>
-              <span className="text-xs mt-1">Agenda</span>
-            </a>
-          </Link>
-          <Link href="/payments">
-            <a className={linkClass('/payments')}>
-              <i className="ri-money-dollar-circle-line text-xl"></i>
-              <span className="text-xs mt-1">Financeiro</span>
-            </a>
-          </Link>
+          <div className={linkClass('/')} onClick={() => window.location.href = "/"}>
+            <i className="ri-dashboard-line text-xl"></i>
+            <span className="text-xs mt-1">Dashboard</span>
+          </div>
+          <div className={linkClass('/students')} onClick={() => window.location.href = "/students"}>
+            <i className="ri-user-line text-xl"></i>
+            <span className="text-xs mt-1">Alunas</span>
+          </div>
+          <div className={linkClass('/workouts')} onClick={() => window.location.href = "/workouts"}>
+            <i className="ri-heart-pulse-line text-xl"></i>
+            <span className="text-xs mt-1">Treinos</span>
+          </div>
+          <div className={linkClass('/schedule')} onClick={() => window.location.href = "/schedule"}>
+            <i className="ri-calendar-line text-xl"></i>
+            <span className="text-xs mt-1">Agenda</span>
+          </div>
+          <div className={linkClass('/payments')} onClick={() => window.location.href = "/payments"}>
+            <i className="ri-money-dollar-circle-line text-xl"></i>
+            <span className="text-xs mt-1">Financeiro</span>
+          </div>
         </>
       ) : (
         <>
-          <Link href="/">
-            <a className={linkClass('/')}>
-              <i className="ri-dashboard-line text-xl"></i>
-              <span className="text-xs mt-1">Dashboard</span>
-            </a>
-          </Link>
-          <Link href="/schedule">
-            <a className={linkClass('/schedule')}>
-              <i className="ri-calendar-line text-xl"></i>
-              <span className="text-xs mt-1">Calendário</span>
-            </a>
-          </Link>
-          <Link href="/workouts">
-            <a className={linkClass('/workouts')}>
-              <i className="ri-heart-pulse-line text-xl"></i>
-              <span className="text-xs mt-1">Treinos</span>
-            </a>
-          </Link>
-          <Link href="/payments">
-            <a className={linkClass('/payments')}>
-              <i className="ri-money-dollar-circle-line text-xl"></i>
-              <span className="text-xs mt-1">Pagamentos</span>
-            </a>
-          </Link>
-          <a href="#" className={linkClass('#')}>
+          <div className={linkClass('/')} onClick={() => window.location.href = "/"}>
+            <i className="ri-dashboard-line text-xl"></i>
+            <span className="text-xs mt-1">Dashboard</span>
+          </div>
+          <div className={linkClass('/schedule')} onClick={() => window.location.href = "/schedule"}>
+            <i className="ri-calendar-line text-xl"></i>
+            <span className="text-xs mt-1">Calendário</span>
+          </div>
+          <div className={linkClass('/workouts')} onClick={() => window.location.href = "/workouts"}>
+            <i className="ri-heart-pulse-line text-xl"></i>
+            <span className="text-xs mt-1">Treinos</span>
+          </div>
+          <div className={linkClass('/payments')} onClick={() => window.location.href = "/payments"}>
+            <i className="ri-money-dollar-circle-line text-xl"></i>
+            <span className="text-xs mt-1">Pagamentos</span>
+          </div>
+          <div className={linkClass('#')}>
             <i className="ri-user-line text-xl"></i>
             <span className="text-xs mt-1">Perfil</span>
-          </a>
+          </div>
         </>
       )}
     </nav>

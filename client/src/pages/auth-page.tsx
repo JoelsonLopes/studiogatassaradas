@@ -10,8 +10,16 @@ export default function AuthPage() {
   const { user, isLoading } = useAuth();
   const [, navigate] = useLocation();
 
+  // Adicionando logs para debug
+  console.log("AuthPage - User:", user);
+  console.log("AuthPage - isLoading:", isLoading);
+
   useEffect(() => {
+    console.log("AuthPage useEffect - User:", user);
+    console.log("AuthPage useEffect - isLoading:", isLoading);
+    
     if (user && !isLoading) {
+      console.log("AuthPage - Navegando para /");
       navigate("/");
     }
   }, [user, isLoading, navigate]);

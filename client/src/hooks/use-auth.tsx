@@ -23,6 +23,9 @@ export const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const { toast } = useToast();
+  // Adicionando logs para debug
+  console.log("AuthProvider - Inicializando");
+  
   const {
     data: user,
     error,
@@ -31,20 +34,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     queryKey: ["/api/user"],
     queryFn: getQueryFn({ on401: "returnNull" }),
   });
+  
+  console.log("AuthProvider - User:", user);
+  console.log("AuthProvider - isLoading:", isLoading);
 
   const loginMutation = useMutation({
     mutationFn: async (credentials: LoginData) => {
+      console.log("Login - Credenciais:", credentials);
       const res = await apiRequest("POST", "/api/login", credentials);
-      return await res.json();
+      const userData = await res.json();
+      console.log("Login - Resposta do servidor:", userData);
+      return userData;
     },
     onSuccess: (user: User) => {
+      console.log("Login - onSuccess:", user);
+      // Forçar uma atualização da query cache
       queryClient.setQueryData(["/api/user"], user);
+      // Forçar um refetch para ter certeza que o usuário está atualizado
+      queryClient.invalidateQueries({ queryKey: ["/api/user"] });
       toast({
         title: "Login bem-sucedido",
         description: `Bem-vindo(a) de volta, ${user.name}!`,
       });
     },
     onError: (error: Error) => {
+      console.log("Login - onError:", error);
       toast({
         title: "Falha no login",
         description: error.message,

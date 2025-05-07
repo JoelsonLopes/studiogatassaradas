@@ -33,16 +33,16 @@ export default function ActivityItem({ user, action, timestamp, status }: Activi
   const { label, variant } = statusConfig[status];
 
   return (
-    <div className="p-4 hover:bg-neutral-lightest transition-colors">
+    <div className="p-4 hover:bg-neutral-lightest transition-colors rounded-lg border border-transparent hover:border-neutral-light">
       <div className="flex items-start">
         {user.profilePicture ? (
           <img 
             src={user.profilePicture} 
             alt={`Foto de perfil de ${user.name}`} 
-            className="w-10 h-10 rounded-full object-cover mr-3" 
+            className="w-10 h-10 rounded-full object-cover mr-3 border-2 border-primary/20" 
           />
         ) : (
-          <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white mr-3">
+          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white mr-3 shadow-sm">
             {user.name.charAt(0)}
           </div>
         )}
@@ -50,7 +50,7 @@ export default function ActivityItem({ user, action, timestamp, status }: Activi
           <div className="flex items-center">
             <h4 className="font-medium">{user.name}</h4>
             <Badge 
-              className={`ml-2 bg-${variant} bg-opacity-10 text-${variant} rounded-full px-2 py-1`}
+              className="ml-2 px-2 py-0.5 text-xs"
               variant={variant as any}
             >
               {label}

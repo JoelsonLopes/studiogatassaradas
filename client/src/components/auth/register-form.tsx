@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 import {
   Form,
   FormControl,
@@ -28,6 +29,7 @@ type RegisterFormValues = z.infer<typeof registerSchema>;
 export default function RegisterForm() {
   const { registerMutation } = useAuth();
   const [isVisible, setIsVisible] = useState(false);
+  const [, navigate] = useLocation();
 
   const form = useForm<RegisterFormValues>({
     resolver: zodResolver(registerSchema),
@@ -40,7 +42,13 @@ export default function RegisterForm() {
   });
 
   function onSubmit(values: RegisterFormValues) {
-    registerMutation.mutate(values);
+    registerMutation.mutate(values, {
+      onSuccess: () => {
+        console.log("Redirecionando após cadastro bem-sucedido");
+        // Redirecionamento explícito após cadastro bem-sucedido
+        navigate("/");
+      }
+    });
   }
 
   return (

@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 import {
   Form,
   FormControl,
@@ -25,6 +26,7 @@ type LoginFormValues = z.infer<typeof loginSchema>;
 export default function LoginForm() {
   const { loginMutation } = useAuth();
   const [isVisible, setIsVisible] = useState(false);
+  const [, navigate] = useLocation();
 
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
@@ -35,7 +37,13 @@ export default function LoginForm() {
   });
 
   function onSubmit(values: LoginFormValues) {
-    loginMutation.mutate(values);
+    loginMutation.mutate(values, {
+      onSuccess: () => {
+        console.log("Redirecionando após login bem-sucedido");
+        // Redirecionamento explícito após login bem-sucedido
+        navigate("/");
+      }
+    });
   }
 
   return (

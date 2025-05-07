@@ -17,9 +17,9 @@ interface SessionItemProps {
 }
 
 const colorVariants = {
-  primary: "bg-primary bg-opacity-10 text-primary",
-  secondary: "bg-secondary bg-opacity-10 text-secondary", 
-  accent: "bg-accent bg-opacity-10 text-accent"
+  primary: "bg-primary/15 text-primary",
+  secondary: "bg-secondary/15 text-secondary", 
+  accent: "bg-accent/15 text-accent"
 };
 
 export default function SessionItem({ 
@@ -33,10 +33,10 @@ export default function SessionItem({
   const colorClass = colorVariants[variant];
 
   return (
-    <div className="p-4 hover:bg-neutral-lightest transition-colors">
+    <div className="p-4 hover:bg-neutral-lightest transition-colors rounded-lg border border-transparent hover:border-neutral-light">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <div className={`${colorClass} rounded-lg p-2 flex items-center justify-center mr-3 w-12 h-12`}>
+          <div className={`${colorClass} rounded-lg p-2 flex items-center justify-center mr-3 w-12 h-12 shadow-sm`}>
             <span className="font-heading font-medium">{time}</span>
           </div>
           <div>

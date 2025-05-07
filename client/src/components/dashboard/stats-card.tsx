@@ -16,9 +16,9 @@ const iconContainerVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-primary bg-opacity-10",
-        secondary: "bg-secondary bg-opacity-10",
-        accent: "bg-accent bg-opacity-10",
+        primary: "bg-primary/15",
+        secondary: "bg-secondary/15",
+        accent: "bg-accent/15",
       },
     },
     defaultVariants: {
@@ -45,13 +45,13 @@ const iconVariants = cva(
 
 export default function StatsCard({ title, value, icon, trend, variant = "primary" }: StatsCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-sm p-4 border border-neutral-light">
+    <div className="bg-white rounded-xl shadow-sm p-4 border border-neutral-light hover:shadow-md transition-shadow">
       <div className="flex items-center">
         <div className={iconContainerVariants({ variant })}>
           <i className={`${icon} ${iconVariants({ variant })}`}></i>
         </div>
         <div>
-          <p className="text-neutral-medium text-sm">{title}</p>
+          <p className="text-neutral-medium text-sm font-medium">{title}</p>
           <h3 className="font-heading font-bold text-2xl">{value}</h3>
         </div>
       </div>

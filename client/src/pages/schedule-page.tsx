@@ -227,13 +227,15 @@ export default function SchedulePage() {
                   Selecione uma data para ver os agendamentos
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Calendar
-                  mode="single"
-                  selected={selectedDate}
-                  onSelect={setSelectedDate}
-                  className="rounded-md border"
-                />
+              <CardContent className="flex justify-center">
+                <div className="flex flex-col items-center">
+                  <Calendar
+                    mode="single"
+                    selected={selectedDate}
+                    onSelect={setSelectedDate}
+                    className="rounded-md border mx-auto"
+                  />
+                </div>
               </CardContent>
             </Card>
             

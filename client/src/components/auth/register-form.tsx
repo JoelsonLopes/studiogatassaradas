@@ -45,8 +45,8 @@ export default function RegisterForm() {
     registerMutation.mutate(values, {
       onSuccess: () => {
         console.log("Redirecionando após cadastro bem-sucedido");
-        // Redirecionamento explícito após cadastro bem-sucedido
-        navigate("/");
+        // Redirecionamento explícito usando window.location
+        window.location.href = "/";
       }
     });
   }

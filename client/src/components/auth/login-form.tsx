@@ -40,8 +40,8 @@ export default function LoginForm() {
     loginMutation.mutate(values, {
       onSuccess: () => {
         console.log("Redirecionando após login bem-sucedido");
-        // Redirecionamento explícito após login bem-sucedido
-        navigate("/");
+        // Redirecionamento explícito usando window.location
+        window.location.href = "/";
       }
     });
   }

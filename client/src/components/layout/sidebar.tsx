@@ -42,64 +42,64 @@ export default function Sidebar({ visible = true }: SidebarProps) {
           <div className="text-neutral-light text-xs font-semibold uppercase tracking-wider px-4 mb-2">
             Gerenciamento
           </div>
-          <div className={linkClass('/')} onClick={() => window.location.href = "/"}>
+          <Link to="/" className={linkClass('/')}> 
             <i className="ri-dashboard-line mr-3 text-lg"></i>
             Dashboard
-          </div>
-          <div className={linkClass('/students')} onClick={() => window.location.href = "/students"}>
+          </Link>
+          <Link to="/students" className={linkClass('/students')}>
             <i className="ri-user-line mr-3 text-lg"></i>
             Alunas
-          </div>
-          <div className={linkClass('/workouts')} onClick={() => window.location.href = "/workouts"}>
+          </Link>
+          <Link to="/workouts" className={linkClass('/workouts')}>
             <i className="ri-heart-pulse-line mr-3 text-lg"></i>
             Treinos
-          </div>
-          <div className={linkClass('/schedule')} onClick={() => window.location.href = "/schedule"}>
+          </Link>
+          <Link to="/schedule" className={linkClass('/schedule')}>
             <i className="ri-calendar-line mr-3 text-lg"></i>
             Agendamentos
-          </div>
-          <div className={linkClass('/payments')} onClick={() => window.location.href = "/payments"}>
+          </Link>
+          <Link to="/payments" className={linkClass('/payments')}>
             <i className="ri-money-dollar-circle-line mr-3 text-lg"></i>
             Financeiro
-          </div>
+          </Link>
           
           <div className="text-neutral-light text-xs font-semibold uppercase tracking-wider px-4 mt-6 mb-2">
             Conteúdo
           </div>
-          <div className="flex items-center px-4 py-3 mb-2 hover:bg-primary/20 rounded-lg transition-colors cursor-pointer">
+          <Link to="/videos" className="flex items-center px-4 py-3 mb-2 hover:bg-primary/20 rounded-lg transition-colors cursor-pointer">
             <i className="ri-video-line mr-3 text-lg"></i>
             Vídeos
-          </div>
-          <div className="flex items-center px-4 py-3 mb-2 hover:bg-primary/20 rounded-lg transition-colors cursor-pointer">
+          </Link>
+          <Link to="/exercises" className="flex items-center px-4 py-3 mb-2 hover:bg-primary/20 rounded-lg transition-colors cursor-pointer">
             <i className="ri-book-2-line mr-3 text-lg"></i>
             Biblioteca de Exercícios
-          </div>
+          </Link>
         </nav>
       ) : (
         <nav className="mt-6 px-2">
           <div className="text-neutral-light text-xs font-semibold uppercase tracking-wider px-4 mb-2">
             Meu Treino
           </div>
-          <div className={linkClass('/')} onClick={() => window.location.href = "/"}>
+          <Link to="/" className={linkClass('/')}> 
             <i className="ri-dashboard-line mr-3 text-lg"></i>
             Meu Painel
-          </div>
-          <div className={linkClass('/schedule')} onClick={() => window.location.href = "/schedule"}>
+          </Link>
+          <Link to="/schedule" className={linkClass('/schedule')}>
             <i className="ri-calendar-line mr-3 text-lg"></i>
             Calendário
-          </div>
-          <div className={linkClass('/workouts')} onClick={() => window.location.href = "/workouts"}>
+          </Link>
+          <Link to="/workouts" className={linkClass('/workouts')}>
             <i className="ri-heart-pulse-line mr-3 text-lg"></i>
             Meus Treinos
-          </div>
-          <div className="flex items-center px-4 py-3 mb-2 hover:bg-primary/20 rounded-lg transition-colors cursor-pointer">
+          </Link>
+          <Link to="/progress" className="flex items-center px-4 py-3 mb-2 hover:bg-primary/20 rounded-lg transition-colors cursor-pointer">
             <i className="ri-bar-chart-line mr-3 text-lg"></i>
             Progresso
-          </div>
-          <div className={linkClass('/payments')} onClick={() => window.location.href = "/payments"}>
+          </Link>
+          <Link to="/payments" className={linkClass('/payments')}>
             <i className="ri-money-dollar-circle-line mr-3 text-lg"></i>
             Pagamentos
-          </div>
+          </Link>
         </nav>
       )}
       

@@ -1,6 +1,48 @@
-node_modules
-dist
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
 .DS_Store
-server/public
-vite.config.ts.*
+Thumbs.db
+
+# Env files
+.env
+.env.*
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Replit
+.replit
+
+# Misc
 *.tar.gz
+server/public/
+generated-icon.png
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Optional: lock files (if you want to ignore them)
+# package-lock.json
+yarn.lock
+pnpm-lock.yaml

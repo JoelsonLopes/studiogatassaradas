@@ -11,6 +11,7 @@ import SchedulePage from "@/pages/schedule-page";
 import PaymentsPage from "@/pages/payments-page";
 import StudentDashboard from "@/pages/student-dashboard";
 import { AuthProvider, useAuth } from "./hooks/use-auth";
+import MainLayout from "@/components/layout/MainLayout";
 
 function AppRoutes() {
   const { user } = useAuth();
@@ -20,33 +21,14 @@ function AppRoutes() {
       {/* Public route */}
       <Route path="/auth" component={AuthPage} />
       
-      {/* Protected routes */}
-      <ProtectedRoute 
-        path="/" 
-        component={user?.role === "trainer" ? DashboardPage : StudentDashboard} 
-      />
-      
-      {/* Trainer routes */}
-      <ProtectedRoute
-        path="/students"
-        roles={["trainer"]}
-        component={StudentsPage}
-      />
-      <ProtectedRoute
-        path="/workouts"
-        roles={["trainer"]}
-        component={WorkoutsPage}
-      />
-      <ProtectedRoute
-        path="/schedule"
-        roles={["trainer"]}
-        component={SchedulePage}
-      />
-      <ProtectedRoute
-        path="/payments"
-        roles={["trainer"]}
-        component={PaymentsPage}
-      />
+      {/* Protected routes with fixed layout */}
+      <MainLayout>
+        <ProtectedRoute path="/" component={user?.role === "trainer" ? DashboardPage : StudentDashboard} />
+        <ProtectedRoute path="/students" roles={["trainer"]} component={StudentsPage} />
+        <ProtectedRoute path="/workouts" roles={["trainer"]} component={WorkoutsPage} />
+        <ProtectedRoute path="/schedule" roles={["trainer"]} component={SchedulePage} />
+        <ProtectedRoute path="/payments" roles={["trainer"]} component={PaymentsPage} />
+      </MainLayout>
       
       {/* Fallback to 404 */}
       <Route component={NotFound} />

@@ -10,14 +10,14 @@ export default function MobileNavigation() {
   const isTrainer = user.role === "trainer";
   
   const linkClass = (path: string) => 
-    `flex flex-col items-center p-2 ${
+    `flex flex-col items-center p-2 rounded-lg transition-colors mx-1 ${
       location === path 
-        ? "text-primary" 
-        : "text-neutral-medium"
+        ? "bg-primary text-white" 
+        : "text-white/70 hover:bg-primary/20"
     } cursor-pointer`;
 
   return (
-    <nav className="md:hidden fixed bottom-0 inset-x-0 bg-white border-t border-neutral-light flex justify-around p-2 z-10">
+    <nav className="md:hidden fixed bottom-0 inset-x-0 bg-secondary text-white flex justify-around p-2 z-50 border-t border-neutral-light">
       {isTrainer ? (
         <>
           <div className={linkClass('/')} onClick={() => window.location.href = "/"}>
